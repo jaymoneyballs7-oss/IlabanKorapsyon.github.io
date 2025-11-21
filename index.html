@@ -23,65 +23,64 @@
         }
 
         /* Header Styles */
-        .header {
-            position: relative;
-            height: 50vh;
-            background-image: url('header-background.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden;
-        }
+.header {
+    position: relative;
+    min-height: 50vh; /* changed from fixed height to min-height */
+    background-image: url('header-background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
 
-        .header::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle, rgba(0,0,139,0) 50%, rgba(0,0,139,0.6) 100%);
-            z-index: 1;
-        }
+/* Top-right text */
+.top-right-text {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #FFD700;
+    font-size: 0.9rem; /* default size */
+    z-index: 3;
+    max-width: 45%; /* prevent wrapping too far */
+    text-align: right;
+}
 
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 20px;
-        }
+/* Responsive Layout */
+@media(max-width: 900px) {
+    .main {
+        flex-direction: column;
+    }
+    .sidebar {
+        margin-right: 0;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+}
 
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-        }
+@media(max-width: 600px) {
+    .header {
+        min-height: auto; /* let header expand naturally */
+        padding: 20px 10px;
+    }
 
-        .header-content p {
-            font-size: 1.2rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-        }
+    .header-content h1 {
+        font-size: 2rem;
+    }
 
-        .header-links {
-            margin-top: 20px;
-        }
+    .header-content p {
+        font-size: 1rem;
+    }
 
-        .header-links a {
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
+    .top-right-text {
+        font-size: 0.7rem; /* smaller for mobile */
+        max-width: 70%;    /* allow wrapping if needed */
+    }
+}
 
-        /* Top-right text */
-        .top-right-text {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            color: #FFD700;
-            font-size: 0.9rem;
-            z-index: 3;
-        }
 
         /* Main Section Layout */
         .main {
