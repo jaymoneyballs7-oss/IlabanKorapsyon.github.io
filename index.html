@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1024"> <!-- forces desktop width on mobile -->
+<title>Corruption Awareness Website</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #00FF00;
+    line-height: 1.6;
+    background-color: #111;
+    overflow-x: auto; /* allows horizontal scrolling on small screens */
+}
+
+a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Fixed-width container to mimic desktop */
+.container {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    position: relative;
+    min-height: 50vh;
+    background-image: url('header-background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Overlay gradient */
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(0,0,139,0) 50%, rgba(0,0,139,0.6) 100%);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.header-links {
+    margin-top: 20px;
+}
+
+.header-links a {
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Top-right text */
+.top-right-text {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #FFD700;
+    font-size: 0.7rem; /* smaller for mobile */
+    max-width: 45%;
+    text-align: right;
+    z-index: 3;
+}
+
+/* Main Section Layout */
+.main {
+    display: flex;
+    padding: 50px 20px;
+}
+
+.sidebar {
+    flex: 1;
+    max-width: 300px;
+    margin-right: 40px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.content {
+    flex: 2;
+}
+
+.content-background {
+    position: relative;
+    background-image: url('main-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px;
+}
+
+.content-background::before {
+    content: '';
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background-color: rgba(0,0,0,0.5);
+    z-index:0;
+}
+
+.content-inner {
+    position: relative;
+    z-index:1;
+}
+
+.content-inner p {
+    margin-bottom: 20px;
+}
+
+.content-inner img.link-image,
+.content-inner img.example-image {
+    display: block;
+    margin: 10px 0 30px 0;
+    max-width: 100%;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header class="header">
+        <p class="top-right-text">Hey twin. Share this website online to spread the message of advocacy against corruption,
+             and with it, add what you’ve learned, just a few sentences will do.
+              screenshot and send to jaysieoryllfvillaflores@tua.edu.ph to be added on the “supporters” list.
+        </p>
+        <div class="header-content">
+            <p>Have you ever felt injustice? Maybe felt those above you treat others unfairly? Maybe even withholding vital resources just for their own gain?</p>
+            <p>What you have experienced is most commonly known as.</p>
+            <h1>Corruption</h1>
+            <div class="header-links">
+                <a href="Comparison-Graph/ComparisonGraph.html">Comparison Graph</a>
+                <a href="Being-Knowledgeable/BeingKnowledgeable.html">Being Knowledgeable</a>
+                <a href="Aircraft-Activity/AircraftActivity.html">Aircraft Activity</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <div class="main">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>What is Corruption?</h2>
+            <p>Corruption is the abuse of power for personal gain within a group or structure with people in charge of others. It happens when someone in a position of authority or responsibility uses their role to benefit themselves, their friends, or their associates instead of doing what is morally right or fair. Corruption weakens trust and creates an unfair environment for those affected and is an L play.</p>
+
+            <h3>Examples of Corruption:</h3>
+
+            <p><strong>1. In Schools 学校における汚職 (Gakkō ni okeru oshoku):</strong> In schools, corruption takes on more of an emotional role, such as teachers or staff giving special treatment to certain students, friends copying off of each other during tests or forms of corruption within a class’s structure which lead to bullying of others.
+            </p>
+            <img class="example-image" src="CorruptionSchool.png" alt="School Example">
+
+            <p><strong>2. In Workplaces 職場における汚職 (Shokuba ni okeru oshoku):</strong> In workplaces, unfair hiring practices happen such as nepotism, hiring or promoting friends or relatives even if they are less qualified, bribery such as employees or managers receiving money in order to give unfair advantages to those under them, and the theft of resources meant for the workplace carries a significant risk in termination of employment and losing aura.
+            </p>
+            <img class="example-image" src="CorruptionWorkplace.jpeg" alt="Workplace Example">
+
+            <p><strong>3. In Government 政府における汚職 (Seifu ni okeru oshoku):</strong> In the Government, corruption takes on a more significant role that could affect how a country runs itself, so it’s important to identify these situations such as embezzlement where public officials take funds meant for government or public use and services, Bribery also takes place where officials could accept bribes in exchange for permits, approvals, and contracts, often times given by large companies to turn a profit through destructive ways that wouldn't be approved normally due to low rizz with the public, and sometimes corruption affects the decision making process where, individuals and their group could often benefit from. Which leads to unfair decisions being made through connections.
+            </p>
+            <img class="example-image" src="CorruptionGovernment.jpg" alt="Government Example">
+        </div>
+
+        <!-- Main content -->
+        <div class="content">
+            <div class="content-background">
+                <div class="content-inner">
+                   <p><strong>Did you know?</strong> A study conducted by the United Nations Development Program estimated that the government lost ₱25 billion due to official corruption.  
+                (<a href="https://www.ombudsman.gov.ph/docs/publication/8-Point-Strategy-Primer.pdf" target="_blank">Page 2</a>)  
+                This is a result of the greed inherent in the nature of corruption.</p>
+
+                <p>Corruption is not only greedy but also damaging and wasteful. It does nothing to serve the good of a community. To fight this evil, one must strive to be an advocate against it and uphold honor and integrity within their community.</p>
+
+                <p>Even the smallest community can be poisoned by corruption. This abuse hurts not just individuals, but entire neighborhoods, including farmers, fishermen, and livestock keepers—people whose livelihoods depend on natural resources and fair systems of support. Corruption in local governance can divert aid away from those who need it most.  
+                For example, a barangay official taking advantage of distributing cash aid demonstrates how even local communities can be riddled with corrupt individuals.  
+                (<a href="https://dilg.gov.ph/news/DILG-183-brgy-execs-under-investigation-by-PNP-for-alleged-corruption-in-distributing-cash-aid/NC-2020-1145" target="_blank">Source</a>)</p>
+
+                <p>Statistics show that the Philippines ranks 114th out of 180 countries as of 2024, highlighting how leaders continue to fail in stopping corruption within society.  
+                (<a href="https://www.transparency.org/en/countries/philippines" target="_blank">Source</a>)</p>
+
+                <p>Corruption is not just a political or economic problem—it is a moral and social crisis. It affects even the largest bodies of authority and governance. A troubling trend in recent news shows how corruption has run deep within the Philippine government, particularly impacting funds meant for disaster relief. Unfortunately, some officials exploit natural disasters, embezzling funds for projects that should reduce destruction.</p>
+
+                <p>In July 2025, President Marcos reported that his administration had implemented over 5,500 flood control projects and announced plans for at least ten large-scale projects amounting to more than ₱500 billion (US$10.15 billion) over the next 13 years.  
+                (<a href="https://en.wikipedia.org/wiki/Flood_control_projects_scandal_in_the_Philippines" target="_blank">Source</a>)</p>
+
+                <p>However, in just three towns within Bulacan, the Commission on Audit (COA) found irregularities in four flood control projects worth ₱334 million. In its seventh fraud audit report submitted to the Independent Commission for Infrastructure, COA found evidence of fraud and falsification in all four projects, implicating both public works officials and contractors.  
+                (<a href="https://www.rappler.com/philippines/luzon/coa-fraud-audit-defective-flood-control-projects-bulacan-november-12-2025/" target="_blank">Source</a>)</p>
+
+                <p>The sheer scale of funds stolen from these projects is alarming. It is a call to action not just for the youth but also for adults with power and influence. Advocacy against corruption should extend beyond small communities and aim towards systemic change at higher levels of authority.</p>
+
+                <p>Promote honesty, integrity, and charitability. Even small actions can make a difference, and these efforts can snowball into larger, more significant impacts for our society.</p>
+
+                <p>Christian values teach us that greed and dishonesty are morally wrong. The Lord’s teachings call us to be honest, have humility, and service virtues that are the very opposite of corruption. By grounding our anti corruption advocacy in biblical ethics, we give our fight both strength and meaning. When we act justly, we help make things right, restoring integrity in public life.</p>
+
+                <p>On a more personal level understanding conscience and human behavior helps. We need knowledge of how people think, why they make certain decisions and what motivates them morally. That awareness supports better decision making when corruption challenges us... Do we speak up, expose, or reform? </p>
+
+                <p>Though some may say that corruption isn't a significant aspect that affects our GDP but instead our country’s lack of many good learning facilities within global standards, while this is true and i even agree to the rudimentary ability to provide an education our country can in relation to others, corruption is not strictly attached to economical problems affecting the funding of our schools but also the resulting effects of these actions, such the withholding of funds for the aforementioned flood control projects, causing flooding in areas more prone that would’ve not been the case had the funding been provided and causing areas to temporarily suspend classes, affecting schedules and these student’s ability to learn. </p>
+
+                <p>In conclusion, corruption can happen in all forms of leadership and authority and increases in significance in relation to its magnitude, and corruption not only harms economically but also on other levels of damage such as with trust, respect, and the lives of those being affected in the end. And of course it all starts with an action, even if it’s little, ultimately it could snowball into larger actions with more good done to others, always advocating against corruption, injustice, and unfair treatment towards others.</p>
+
+                <p>So my call to action for you to share this website, hopefully giving insight and information on how to spot and counteract corruption within a community, big or small.</p>
+
+                <p><strong>Because movement always starts small.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
