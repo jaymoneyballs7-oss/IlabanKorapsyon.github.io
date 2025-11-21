@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Selection Game</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("Websitebackround.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
+h1, p {
+    color: #00aa00;
+    margin: 5px;
+}
+
+#imageContainer {
+    height: 260px;
+    margin-top: 30px;
+}
+
+#mainImage {
+    width: 300px; /* Increased size */
+    transition: transform 2s ease-in-out, opacity 1s ease-in-out;
+}
+
+#congratsText {
+    display: none;
+    color: #00aa00;
+    font-size: 18px;
+    margin-top: 80px;
+}
+
+#gameArea {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 12px;
+}
+
+td {
+    background: #808080;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s, background 0.3s;
+}
+
+td:hover {
+    transform: scale(1.05);
+}
+
+.clickedCorrect {
+    background: green;
+}
+
+.clickedWrong {
+    background: #a00000;
+}
+</style>
+</head>
+<body>
+
+<h1>QUICK!</h1>
+<p>Think of what characteristics form a great advocate, select 4 attributes you think they possess</p>
+
+<div id="imageContainer">
+    <img id="mainImage" src="Helicopter.png">
+    <p id="congratsText">Congrats! looks like you recognize what a true advocate is</p>
+</div>
+
+<div id="gameArea">
+    <table id="wordTable"></table>
+</div>
+
+<audio id="winSound" src="helicoptersound.mp3"></audio>
+
+<script>
+// Word list
+const words = [
+    { text: "Honest", correct: true },
+    { text: "Empathetic", correct: true },
+    { text: "Communicative", correct: true },
+    { text: "Critical Thinker", correct: true },
+
+    { text: "Lazy", correct: false },
+    { text: "Corrupt", correct: false },
+    { text: "Arrogant", correct: false },
+    { text: "Inattentive", correct: false },
+    { text: "Selfish", correct: false },
+    { text: "Manipulative", correct: false },
+    { text: "Biased", correct: false },
+    { text: "Unprepared", correct: false },
+    { text: "Impatient", correct: false },
+    { text: "Unreliable", correct: false },
+    { text: "Disrespectful", correct: false },
+    { text: "Closed-minded", correct: false },
+    { text: "Dishonest", correct: false },
+    { text: "Weak-willed", correct: false },
+    { text: "Careless", correct: false },
+    { text: "Passive", correct: false }
+];
+
+// Shuffle
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+shuffle(words);
+
+const table = document.getElementById("wordTable");
+const image = document.getElementById("mainImage");
+const sound = document.getElementById("winSound");
+const congratsText = document.getElementById("congratsText");
+
+let correctCount = 0;
+const maxCorrect = 4;
+
+// Create table (5 per row)
+for (let i = 0; i < words.length; i += 5) {
+    const row = document.createElement("tr");
+
+    for (let j = i; j < i + 5; j++) {
+        if (!words[j]) break;
+
+        const cell = document.createElement("td");
+        cell.innerText = words[j].text;
+        cell.dataset.correct = words[j].correct;
+
+        cell.addEventListener("click", () => {
+
+            if (cell.classList.contains("clickedCorrect") || 
+                cell.classList.contains("clickedWrong")) return;
+
+            if (cell.dataset.correct === "true") {
+                cell.classList.add("clickedCorrect");
+                correctCount++;
+
+                if (correctCount === maxCorrect) {
+                    sound.play();
+
+                    // Fly animation
+                    image.style.transform = "translateY(-800px) rotate(720deg)";
+                    image.style.opacity = 0;
+
+                    // Show text after image leaves
+                    setTimeout(() => {
+                        image.style.display = "none";
+                        congratsText.style.display = "block";
+                    }, 1500);
+                }
+            } else {
+                cell.classList.add("clickedWrong");
+            }
+        });
+
+        row.appendChild(cell);
+    }
+    table.appendChild(row);
+}
+</script>
+
+</body>
+</html>

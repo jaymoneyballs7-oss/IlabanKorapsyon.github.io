@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Economic Impact of Corruption</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+      color: #00ff66;
+
+      background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Dark overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 30px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      color: #00ff88;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .images {
+      display: flex;
+      gap: 15px;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+
+    .images img {
+  width: 100%;
+  max-width: 450px;   /* controls max size */
+  height: auto;       /* keeps correct aspect ratio */
+  object-fit: contain;
+  display: block;
+}
+
+
+    a {
+      color: #66ff99;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Visualizing the Economic Impact of Corruption</h1>
+
+  <p>
+    To show how corruption intensity affects economic growth in different countries,
+    using the Philippines, Indonesia, and Vietnam as examples, this visualization
+    highlights the economic consequences of corruption.
+  </p>
+
+  <p>
+    Corruption’s impact on the economy is non-linear. Small increases might not have
+    immediate effects, but after a threshold, growth drops faster.
+  </p>
+
+  <p><strong>X-axis:</strong> Corruption intensity (0–10 scale)  
+  derived from the Corruption Perceptions Index (CPI).  
+  Inverted as: <code>100 – CPI</code></p>
+
+  <p><strong>Example:</strong> Philippines  
+  CPI = 33 → Inverted = 67 → Scaled to 6.7</p>
+
+  <p><strong>Y-axis:</strong> Relative economic growth (0–10 scale)  
+  Baseline growth = 10.</p>
+
+  <p>
+    Scenarios per country:  
+    Baseline, Moderate corruption, and High corruption.
+  </p>
+
+  <!-- ONLY TWO IMAGES TOTAL -->
+  <div class="images">
+    <img src="Data.png" alt="Chart 1">
+    <img src="PolynomialGraph.png" alt="Chart 2">
+  </div>
+
+  <h3>Sources</h3>
+  <p>
+    <a href="https://www.pids.gov.ph/details/news/in-the-news/philippines-ranking-inches-up-in-global-corruption-perceptions-index">Philippines CPI</a><br>
+    <a href="https://www.dbm.gov.ph/index.php/management-2/3199-pangandaman-welcomes-2024-gdp-growth">Philippines GDP</a><br><br>
+
+    <a href="https://www.transparency.org/en/press/2024-corruption-perceptions-index-countries-on-front-line-of-climate-crisis-in-asia-pacific-struggling-to-fight-back-corruption">Indonesia CPI</a><br>
+    <a href="https://www.bps.go.id/en/pressrelease/2025/02/05/2408">Indonesia GDP</a><br><br>
+
+    <a href="https://www.transparency.org/en/countries/vietnam">Vietnam CPI</a><br>
+    <a href="https://www.vietnam.vn/en/gdp-nam-2024-uoc-tang-709">Vietnam GDP</a>
+  </p>
+</div>
+
+</body>
+</html>
